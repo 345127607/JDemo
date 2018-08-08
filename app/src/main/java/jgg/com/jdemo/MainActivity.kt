@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     internal var data = ArrayList<Pair<Class<*>, String>>()
     init {
         data.add(Pair(MainActivity2::class.java, "测试页面"))
+        data.add(Pair(ZfbHomeActivity::class.java, "仿支付宝首页滑动"))
+        data.add(Pair(IndicatorActivity::class.java, "新款滑动"))
     }
 
     internal var isError = false
@@ -44,6 +46,7 @@ class MainActivity : AppCompatActivity() {
                 recyclerview.postDelayed({ mainRecycAdapter.loadMoreFail() }, 2000)
             }
         }, recyclerview)
+
     }
 
     class MainRecycAdapter : BaseQuickAdapter<Pair<Class<*>, String>, BaseViewHolder> {
